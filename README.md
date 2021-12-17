@@ -36,13 +36,15 @@ sudo docker image ls
 ```
 
 ### 1.Commit docker image
+**Create Docker Hub repo first!!!!!!!!**
+
 Input containerID, imageName, imageTag
 ```
 sudo docker commit {containerID} {imageName}:{imageTag}
 ```
-Example:
+Example: (from docker hub repos)
 ```
-sudo docker commit 57da2f55c4db summer:beta
+docker push summerlo/gaytest:tagname
 ```
 
 ### 2.Tag Docker Image
