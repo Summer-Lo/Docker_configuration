@@ -1,5 +1,22 @@
 # Docker_configuration
 
+## Docker Container Build
+
+### Docker Container image Search
+Nvidia NGC (searching image)
+```
+https://catalog.ngc.nvidia.com/
+```
+Considering Factor:
+1. CUDA version
+```
+sudo watch nvidia-smi
+```
+2. TensorFlow / PyTorch version
+3. Required Python version
+
+
+
 ## Docker information
 
 ### Display Docker Container
@@ -18,7 +35,7 @@ sudo docker ps -a
 sudo docker image ls
 ```
 
-### Commit docker image
+### 1.Commit docker image
 Input containerID, imageName, imageTag
 ```
 sudo docker commit {containerID} {imageName}:{imageTag}
@@ -28,7 +45,17 @@ Example:
 sudo docker commit 57da2f55c4db summer:beta
 ```
 
-### Push Docker Image
+### 2.Tag Docker Image
+Input imageName, imageTag, dockerHubUserName, imageName
+```
+sudo docker tag {imageName:imageTag} {dockerHubUsername/imageName}
+```
+Example:
+```
+sudo docker tag summer:test summerlo/test
+```
+
+### 3.Push Docker Image
 Input imageName, imageTag
 ```
 sudo docker push {imageName}:{imageTag}
@@ -39,11 +66,19 @@ sudo docker push summer:beta
 ```
 
 ### Remove Docker Image
+1.
 ```
 sudo docker rmi summer:beta
 ```
 ```
 sudo docker rmi {imageName}:{imageTag}
+```
+2.
+```
+sudo docker image rm summer:beta
+```
+```
+sudo docker image rm {imageName}:{imageTag}
 ```
 
 ## Docker Account 
