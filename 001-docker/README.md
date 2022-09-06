@@ -5,6 +5,16 @@
 ```
 sudo docker run --gpus all -it -v /home/deep-learning/docker-workspace/pytorch-test/:/workspace -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY --env QT_X11_NO_MITSHM=1 -p 1001:8888 nvcr.io/nvidia/pytorch:20.01-py3
 ```
+For MIG:
+```
+'"device={GPU ID}:{MIG Dev}"'
+```
+```
+'"device=0:3"'
+```
+```
+sudo docker run --gpus '"device=0:3"' -it -v /home/icadmin/docker-workspace/tensorflow-test/:/workspace -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY --env QT_X11_NO_MITSHM=1 -p 1001:8888 nvcr.io/nvidia/tensorflow:22.05-tf1-py3
+```
 ### Configurate the GPUs for the container
 ```
 --gpus all
@@ -55,3 +65,4 @@ sudo docker start pytorch-test
 ```
 sudo docker attach pytorch-test
 ```
+

@@ -82,10 +82,12 @@ sudo nvidia-smi mig -lgi
 +-------------------------------------------------------+
 ```
 
-## Creating MIG instance
+## Creating and Destroying MIG instance
 1. Profile ID (e.g. 9, 14, 5)
 2. Short name of the profile (e.g. 3g.20gb
 3. Full profile name of the instance (e.g. MIG 3g.20gb)
+
+### Creating MIG instance
 ```
 sudo nvidia-smi mig -cgi {ID},{short name} -C
 ```
@@ -93,7 +95,20 @@ creating two instances with ID = 14 and short name = 1g.6gb
 ```
 sudo nvidia-smi mig -cgi 14,1g.6gb -C
 ```
+```
+sudo nvidia-smi mig -i <gpu-id> -cgi 14,1g.6gb -C
+```
+
+### Destorying MIG instance
+Destorying id 0, 1, 2
+```
+sudo nvidia-smi mig -i <gpu-id> -gi <gpu-instance-id> -dgi
+```
+```
+sudo nvidia-smi mig -i 1 -gi 0,1,2 -dgi
+```
 
 ### Special Config
 ## Stop Xorg (GPU usage problem)
 https://zhuanlan.zhihu.com/p/410580436
+

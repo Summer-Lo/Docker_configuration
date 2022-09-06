@@ -90,3 +90,9 @@ sudo docker image rm {imageName}:{imageTag}
 sudo docker login
 ```
 Enter account and password
+
+
+# Tensorflow Test
+Please refer to https://www.analyticsvidhya.com/blog/2021/11/benchmarking-cpu-and-gpu-performance-with-tensorflow/
+
+tensorflow-test and tensorflow-test2 
