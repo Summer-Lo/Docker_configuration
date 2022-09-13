@@ -100,6 +100,17 @@ sudo nvidia-smi mig -i <gpu-id> -cgi 14,1g.6gb -C
 ```
 
 ### Destorying MIG instance
+Link for destorying the MIG instance
+```
+https://www.manualslib.com/manual/1925509/Nvidia-Dgx-A100.html?page=85
+```
+1. Destory the ci first
+```
+sudo nvidia-smi mig -i <GPU-ID> -gi <GI-ID> -ci <CI-ID> -dci
+```
+```
+sudo nvidia-smi mig -i 0 -gi 3 -ci 0 -dci
+```
 Destorying id 0, 1, 2
 ```
 sudo nvidia-smi mig -i <gpu-id> -gi <gpu-instance-id> -dgi
