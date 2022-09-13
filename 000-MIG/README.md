@@ -111,6 +111,7 @@ sudo nvidia-smi mig -i <GPU-ID> -gi <GI-ID> -ci <CI-ID> -dci
 ```
 sudo nvidia-smi mig -i 0 -gi 3 -ci 0 -dci
 ```
+2. Destory the GI
 Destorying id 0, 1, 2
 ```
 sudo nvidia-smi mig -i <gpu-id> -gi <gpu-instance-id> -dgi
